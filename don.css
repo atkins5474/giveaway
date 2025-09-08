@@ -1,0 +1,101 @@
+/* ===== Theme ===== */
+:root {
+  --bg:#f9f8ff;
+  --card:#fff;
+  --ink:#1e2230;
+  --muted:#6d7380;
+  --brand:#6556ff;
+  --brand-hover:#4a3fe0;
+  --chip-bg:#efeefe;
+  --shadow:0 8px 24px rgba(30,34,48,.1);
+  --radius:18px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+/* ===== Layout ===== */
+.page { max-width: 1200px; margin: 0 auto; padding: 40px 16px 60px; }
+.header { text-align: center; margin-bottom: 28px; }
+.header h1 { margin: 0; font-size: clamp(24px, 5vw, 36px); }
+.subtitle { color: var(--muted); margin-top: 8px; font-size: 15px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ===== Card ===== */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(30,34,48,.15); }
+
+/* Media */
+.media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+.card:hover .media img { transform: scale(1.05); }
+
+.chip {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--chip-bg);
+  color: var(--brand);
+  font-weight: 600; font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.price {
+  position: absolute; right: 12px; bottom: 12px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(101,86,255,.3);
+}
+
+/* Content */
+.content { padding: 16px 18px 8px; flex: 1; }
+.title { margin: 0 0 8px; font-size: 18px; }
+.points { margin: 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+.points li { margin: 6px 0; }
+
+/* Button */
+.cta {
+  margin: 12px 18px 18px;
+  display: block;
+  text-align: center;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: background .2s ease;
+}
+.cta:hover { background: var(--brand-hover); }
+
+/* Footer note */
+.legal { text-align: center; color: var(--muted); font-size: 12px; margin-top: 28px; }
